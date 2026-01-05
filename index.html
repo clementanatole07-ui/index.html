@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Mon portfolio</title>
+  <meta name="description" content="Ceci est mon portfolio étudiant" />
+
+  <!-- Google Font : Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green-1: #9FCDA8;
+      --green-2: #C7DDC5;
+      --beige-1: #F1F1D3;
+      --beige-2: #E3EBD0;
+      --text-dark: #2f3e34;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: var(--beige-1);
+      color: var(--text-dark);
+    }
+
+    /* ===== NAVBAR ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background-color: var(--green-1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    nav {
+      width: 90%;
+      max-width: 1100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: var(--green-2);
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      min-height: 100vh;
+      padding: 120px 10% 60px;
+    }
+
+   #accueil {
+  background-image: url("img/fond-accueil.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+
+
+    #diplome {
+      background-color: var(--beige-1);
+    }
+
+    #cv {
+      background-color: var(--beige-2);
+    }
+
+    #contact {
+      background-color: var(--beige-1);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    p {
+      max-width: 700px;
+      line-height: 1.6;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact-box {
+      margin-top: 30px;
+      background-color: var(--green-2);
+      padding: 30px;
+      border-radius: 16px;
+      max-width: 500px;
+    }
+
+    .contact-box input,
+    .contact-box textarea {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    .contact-box button {
+      background-color: var(--green-1);
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .contact-box button:hover {
+      opacity: 0.85;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <nav>
+      <strong>Mon Portfolio</strong>
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#diplome">Diplôme</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== ACCUEIL ===== -->
+  <section id="accueil">
+    <h1>Bienvenue sur mon portfolio</h1>
+    <p>
+      Je suis étudiant et voici mon portfolio numérique. Vous trouverez ici
+      mes diplômes, mon CV et un moyen de me contacter.
+    </p>
+  </section>
+
+  <!-- ===== DIPLOME ===== -->
+  <section id="diplome">
+    <h2>Mes diplômes</h2>
+    <p>
+      • Baccalauréat<br>
+      • BTS / Licence / Autre formation<br>
+      • Certifications diverses
+    </p>
+  </section>
+
+  <!-- ===== CV ===== -->
+  <section id="cv">
+    <h2>Mon CV</h2>
+    <p>
+      Vous pouvez ajouter ici un résumé de votre parcours ou un lien vers
+      votre CV en PDF.
+    </p>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-box">
+      <input type="text" placeholder="Votre nom" />
+      <input type="email" placeholder="Votre email" />
+      <textarea rows="5" placeholder="Votre message"></textarea>
+      <button>Envoyer</button>
+    </div>
+  </section>
+
+  <script>
+    // Scroll fluide
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
